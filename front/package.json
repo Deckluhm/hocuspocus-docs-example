@@ -15,7 +15,8 @@
     "@tiptap/extension-paragraph": "^2.0.0-beta.23",
     "@tiptap/extension-text": "^2.0.0-beta.15",
     "@tiptap/vue-3": "^2.0.0-beta.90",
-    "vue": "^3.2.25"
+    "vue": "^3.2.25",
+    "yjs": "^13.5.27"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.2.0",

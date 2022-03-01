@@ -11,6 +11,7 @@ import Paragraph from "@tiptap/extension-paragraph";
 import Text from "@tiptap/extension-text";
 import Collaboration from "@tiptap/extension-collaboration";
 import { HocuspocusProvider } from "@hocuspocus/provider";
+import * as Y from "yjs";
 
 export default {
   components: {
@@ -25,9 +26,12 @@ export default {
   },
 
   mounted() {
+    const ydoc = new Y.Doc();
+
     this.provider = new HocuspocusProvider({
       url: "ws://localhost:1234",
       name: "example-document",
+      document: ydoc,
     });
 
     this.editor = new Editor({
@@ -36,7 +40,7 @@ export default {
         Paragraph,
         Text,
         Collaboration.configure({
-          document: this.provider.document,
+          document: ydoc,
         }),
       ],
     });
